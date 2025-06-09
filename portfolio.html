@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Gokul</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 2px solid #00ffd5;
+    }
+
+    header h1 {
+      color: #00ffd5;
+      font-size: 2.5em;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ffd5;
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+      animation: pulse 2s infinite;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #00ffd5aa;
+    }
+
+    .project-title {
+      font-size: 1.3em;
+      color: #00ffd5;
+      margin-bottom: 10px;
+      animation: slideInLeft 1s ease-in-out;
+    }
+
+    .project-description {
+      color: #ccc;
+      font-size: 1em;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background-color: #00ffd5;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #00ccb3;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MY PROJECTS</h1>
+  </header>
+
+  <section>
+    <h2>MY Portfolio</h2>
+    <div class="projects">
+      <div class="project">
+        <div class="project-title">🧬 Melanoma Detection (cancer detection)</div>
+        <div class="project-description">An AI-based skin cancer detection system using Python, TensorFlow & Flask to assist early diagnosis.</div>
+      </div>
+      <div class="project">
+        <div class="project-title">📍 Find Go (Find your lost items)</div>
+        <div class="project-description">A real-time location-sharing app using React Native, Firebase, and Google Maps API.</div>
+      </div>
+                </div>
+
+    <a href="pro.html" class="back-button">&larr; Back to Home</a>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professional Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated Emoji Background */
+    .emoji-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .emoji-background span {
+      position: absolute;
+      display: block;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: floatEmoji 10s linear infinite;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    header {
+      background: linear-gradient(to right, #1a1a1a, #292929);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 2px solid #00ffd5;
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #00ffd5;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffd5;
+      transform: scale(1.05);
+      border-bottom: 2px solid #00ffd5;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #00ffd5;
+    }
+
+    .home-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 10px 20px rgba(0, 255, 213, 0.3);
+      animation: floatImage 3s ease-in-out infinite;
+    }
+
+    .home-text {
+      max-width: 400px;
+      animation: fadeInText 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    .home-text h2 {
+      color: #00ffd5;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .home-text p {
+      color: #ccc;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    @keyframes floatImage {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        padding: 10px;
+      }
+
+      .home-image img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+    .send-message-box {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1500;
+  background-color: rgba(0, 255, 213, 0.08);
+  border: 2px solid #00ffd5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffd544;
+}
+
+.send-message-box form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.send-message-box input[type="text"] {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95em;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #00ffd5;
+  width: 160px;
+}
+
+.send-message-box button {
+  padding: 6px 10px;
+  border: none;
+  background-color: #00ffd5;
+  color: #0f0f0f;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-message-box button:hover {
+  background-color: #04362a;
+}
+
+@media (max-width: 480px) {
+  .send-message-box {
+    top: 70px;
+    left: 10px;
+    width: 90vw;
+  }
+
+  .send-message-box form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .send-message-box input[type="text"] {
+    width: 100%;
+  }
+
+  .send-message-box button {
+    width: 100%;
+  }
+}
+
+  </style>
+  </style>
+</head>
+<body>
+
+  <!-- Floating Emoji Background -->
+  <div class="emoji-background">
+    <!-- Emojis will be placed randomly -->
+    <span style="left: 5%;">💻</span>
+    <span style="left: 15%; animation-delay: 2s;">⚙️</span>
+    <span style="left: 25%; animation-delay: 4s;">🚀</span>
+    <span style="left: 35%; animation-delay: 1s;">💡</span>
+    <span style="left: 45%; animation-delay: 3s;">🎯</span>
+    <span style="left: 60%; animation-delay: 2.5s;">📱</span>
+    <span style="left: 75%; animation-delay: 1.5s;">🧠</span>
+    <span style="left: 85%; animation-delay: 0.5s;">🛠️</span>
+  </div>
+
+  <header>
+    <h1>WELCOME | hey !</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <section id="home" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px;">
+    <div class="home-image">
+      <img src="C:/Users/gokul/Videos/website/avat.jpg.jpg" alt="Profile" />
+    </div>
+    <div class="home-text">
+      <h2>Hello, I'm Gokul</h2>
+      <p>Creative Front-End Developer 💻</p>
+      <p>Building interactive web experiences with passion and precision.</p>
+    </div>
+  </section>
+<!-- Message Sender Box -->
+<div class="send-message-box">
+  <form id="messageForm">
+    <div id="confirmationMessage" style="display:none; color: #00ffd5; font-size: 0.9em; margin-top: 8px;">
+  ✅ Message has been sent to Gokul!
+</div>
+
+    <input type="text" id="userMessage" placeholder="Type a message..." required />
+    <button type="submit">Send</button>
+  </form>
+</div>
+<script>
+  document.getElementById("messageForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent real form submission
+
+    const confirmation = document.getElementById("confirmationMessage");
+    const input = document.getElementById("userMessage");
+
+    if (input.value.trim() !== "") {
+      confirmation.style.display = "block";
+      input.value = ""; // Clear input
+
+      // Hide after 3 seconds
+      setTimeout(() => {
+        confirmation.style.display = "none";
+      }, 3000);
+    }
+  });
+</script>
+
+</body>
+</html>

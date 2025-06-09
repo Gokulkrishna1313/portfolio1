@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Portfolio</title>
+  <style>
+    /* ... your existing styles remain unchanged ... */
+
+    /* Message box styles */
+    .message-box {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 255, 213, 0.1);
+      border: 2px solid #00ffd5;
+      color: #00ffd5;
+      padding: 15px 25px 15px 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      box-shadow: 0 0 15px #00ffd5aa;
+      font-weight: 600;
+      font-size: 1em;
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .message-box .close-btn {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: #00ffd5;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 1;
+      padding: 0;
+      margin-left: auto;
+      transition: color 0.3s ease;
+    }
+
+    .message-box .close-btn:hover {
+      color: #00ccb3;
+    }
+
+    /* Reuse fadeIn keyframe */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .message-box {
+        max-width: 90vw;
+        font-size: 0.9em;
+        padding: 12px 18px 12px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Emoji Background -->
+  <div class="emoji-background">
+    <span style="left: 5%;">💻</span>
+    <span style="left: 15%; animation-delay: 2s;">⚙️</span>
+    <span style="left: 25%; animation-delay: 4s;">🚀</span>
+    <span style="left: 35%; animation-delay: 1s;">💡</span>
+    <span style="left: 45%; animation-delay: 3s;">🎯</span>
+    <span style="left: 60%; animation-delay: 2.5s;">📱</span>
+    <span style="left: 75%; animation-delay: 1.5s;">🧠</span>
+    <span style="left: 85%; animation-delay: 0.5s;">🛠️</span>
+  </div>
+
+  <header>
+    <h1>WELCOME | hey !</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Message box -->
+  <div class="message-box" id="messageBox">
+    <span>👋 Hey! Welcome to my portfolio. Check out my latest projects!</span>
+    <button class="close-btn" aria-label="Close message" onclick="document.getElementById('messageBox').style.display='none'">&times;</button>
+  </div>
+
+  <section id="home" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px;">
+    <div class="home-image">
+      <img src="C:/Users/gokul/Videos/website/goku.jpg.jpg" alt="Profile" />
+    </div>
+    <div class="home-text">
+      <h2>Hello, I'm Gokul</h2>
+      <p>Creative Front-End Developer 💻</p>
+      <p>Building interactive web experiences with passion and precision.</p>
+    </div>
+  </section>
+
+</body>
+</html>
